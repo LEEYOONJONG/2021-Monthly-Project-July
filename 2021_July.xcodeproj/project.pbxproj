@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		9814F077269C2E0F00BDCA08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9814F075269C2E0F00BDCA08 /* Main.storyboard */; };
 		9814F079269C2E1100BDCA08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9814F078269C2E1100BDCA08 /* Assets.xcassets */; };
 		9814F07C269C2E1100BDCA08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9814F07A269C2E1100BDCA08 /* LaunchScreen.storyboard */; };
+		982BBAA4269D692A00E260AF /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982BBAA3269D692A00E260AF /* LoginManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		9814F078269C2E1100BDCA08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9814F07B269C2E1100BDCA08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9814F07D269C2E1100BDCA08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		982BBAA3269D692A00E260AF /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		D5059C8A0A87CCDF22748F19 /* Pods-2021_July.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2021_July.release.xcconfig"; path = "Target Support Files/Pods-2021_July/Pods-2021_July.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +50,6 @@
 				887553C1481408BE76D412ED /* Pods-2021_July.debug.xcconfig */,
 				D5059C8A0A87CCDF22748F19 /* Pods-2021_July.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,6 +81,7 @@
 				9814F078269C2E1100BDCA08 /* Assets.xcassets */,
 				9814F07A269C2E1100BDCA08 /* LaunchScreen.storyboard */,
 				9814F07D269C2E1100BDCA08 /* Info.plist */,
+				982BBAA3269D692A00E260AF /* LoginManager.swift */,
 			);
 			path = 2021_July;
 			sourceTree = "<group>";
@@ -207,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9814F074269C2E0F00BDCA08 /* ViewController.swift in Sources */,
+				982BBAA4269D692A00E260AF /* LoginManager.swift in Sources */,
 				9814F070269C2E0F00BDCA08 /* AppDelegate.swift in Sources */,
 				9814F072269C2E0F00BDCA08 /* SceneDelegate.swift in Sources */,
 			);

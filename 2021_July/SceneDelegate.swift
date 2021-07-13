@@ -13,7 +13,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
-            print(url)
+            print("SceneDelegate : ", url)
+            if url.absoluteString.starts(with: ""){
+                if let code = url.absoluteString.split(separator: "=").last.map({ String($0) }){
+                    LoginManager.shared.requestAccessToken(with: code)
+                }
+            }
         }
     }
     
