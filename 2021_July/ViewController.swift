@@ -7,8 +7,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     @IBAction func loginClicked(_ sender: Any) {
-        LoginManager.shared.fetch()
         LoginManager.shared.requestCode()
+//        LoginManager.shared.fetch()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
