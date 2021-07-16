@@ -39,7 +39,7 @@ class LoginManager {
         }
     }
     
-    func requestCode() {
+    func requestCode() { // 초기 로그인을 위한
         let scope = "user"
         let urlString = "https://github.com/login/oauth/authorize?client_id=\(client_id)&scope=\(scope)"
         
@@ -47,7 +47,7 @@ class LoginManager {
             UIApplication.shared.open(url)
         }
     }
-    func requestAccessToken(with code: String){
+    func requestAccessToken(with code: String){ // redirection 이후 
         let client_id = "ac6468124c1c1e12dd21"
         let client_secret = "a0c30c5dfaa7224a0928c3635250d3ad26bf709f"
         let url = "https://github.com/login/oauth/access_token"
@@ -64,12 +64,28 @@ class LoginManager {
                         print(dic["scope"])
                         print(dic["token_type"])
                         self.getUser()
+//                        self.getRepo() // json 바깥을 감싸는 소괄호 제거 성공못함.
                     }
                 case let .failure(error):
                     print(error)
                 }
             }
     }
+    func getRepo(){
+        let url = "https://api.github.com/users/LEEYOONJONG/repos?sort=updated"
+        AF.request(url, method: .get, parameters: [:])
+            .responseJSON(completionHandler: {(response) in
+                switch response.result{
+                case .success(let jsonData):
+                    print("getRepo json : ",jsonData)
+                    print("type : ", type(of: jsonData))
+                    
+                case .failure:
+                    print("getRepo fail")
+                }
+            })
+    }
+    
     func getUser(){
         let url = "https://api.github.com/user"
         let accessToken = KeychainSwift().get("accessToken") ?? ""

@@ -13,9 +13,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
-            print("SceneDelegate : ", url)
+            print("SceneDelegate url : ", url)
             if url.absoluteString.starts(with: ""){
                 if let code = url.absoluteString.split(separator: "=").last.map({ String($0) }){
+                    print("SceneDelegate code : ", code)
                     LoginManager.shared.requestAccessToken(with: code)
                 }
             }
