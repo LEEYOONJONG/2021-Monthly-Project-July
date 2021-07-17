@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		274C9EB5279EC05B924E5754 /* Pods_2021_July.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E99EB6D8F77999DE24C28B /* Pods_2021_July.framework */; };
+		9806A1FC26A2B4BD0013449E /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9806A1FB26A2B4BD0013449E /* AlarmManager.swift */; };
 		9814F070269C2E0F00BDCA08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9814F06F269C2E0F00BDCA08 /* AppDelegate.swift */; };
 		9814F072269C2E0F00BDCA08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9814F071269C2E0F00BDCA08 /* SceneDelegate.swift */; };
 		9814F074269C2E0F00BDCA08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9814F073269C2E0F00BDCA08 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		51E99EB6D8F77999DE24C28B /* Pods_2021_July.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2021_July.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		887553C1481408BE76D412ED /* Pods-2021_July.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2021_July.debug.xcconfig"; path = "Target Support Files/Pods-2021_July/Pods-2021_July.debug.xcconfig"; sourceTree = "<group>"; };
+		9806A1FB26A2B4BD0013449E /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		9814F06C269C2E0F00BDCA08 /* 2021_July.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2021_July.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9814F06F269C2E0F00BDCA08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9814F071269C2E0F00BDCA08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				9814F07A269C2E1100BDCA08 /* LaunchScreen.storyboard */,
 				9814F07D269C2E1100BDCA08 /* Info.plist */,
 				982BBAA3269D692A00E260AF /* LoginManager.swift */,
+				9806A1FB26A2B4BD0013449E /* AlarmManager.swift */,
 			);
 			path = 2021_July;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				982BBAA4269D692A00E260AF /* LoginManager.swift in Sources */,
 				9814F070269C2E0F00BDCA08 /* AppDelegate.swift in Sources */,
 				9814F072269C2E0F00BDCA08 /* SceneDelegate.swift in Sources */,
+				9806A1FC26A2B4BD0013449E /* AlarmManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

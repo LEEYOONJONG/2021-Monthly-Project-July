@@ -13,8 +13,8 @@ class LoginManager {
     private let client_id = "ac6468124c1c1e12dd21"
     private let client_secret = "a0c30c5dfaa7224a0928c3635250d3ad26bf709f"
     
-    func fetch(url:String){
-        AF.request(url).responseString { response in
+    func fetch(){
+        AF.request(githubURL).responseString { response in
             guard let responseValue = response.value else{
                 return
             }
@@ -27,7 +27,15 @@ class LoginManager {
                     for day in 1...7{
                         let element:Elements = try doc.select("#js-pjax-container > div.container-xl.px-3.px-md-4.px-lg-5 > div > div.flex-shrink-0.col-12.col-md-9.mb-4.mb-md-0 > div:nth-child(2) > div > div.mt-4.position-relative > div.js-yearly-contributions > div > div > div > svg > g > g:nth-child(\(week)) > rect:nth-child(\(day))")
                         for i in element{
-                            print(try i.attr("data-date"), try i.attr("data-count"))
+//                            print(try i.attr("data-date"), try i.attr("data-count"))
+                            let nowDate = Date()
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "yyyy-MM-dd"
+                            dateFormatter.timeZone = TimeZone(abbreviation: "KST")
+                            let stringDate = dateFormatter.string(from: nowDate)
+                            if (try i.attr("data-date") == stringDate){
+                                print("오늘의 commit 수는 ", try i.attr("data-count"))
+                            }
                         }
                     }
                 }
@@ -102,24 +110,12 @@ class LoginManager {
                             if let result = obj["html_url"]{
                                 let url = String(describing: result) // Any to String
                                 print("방문할 URL : ", url)
-                                self.fetch(url: url)
+                                githubURL = url
+                                self.fetch()
                             }
                             
                         }
                     }
-                    
-//                    if JSONSerialization.isValidJSONObject(json) {
-//                            print("Valid Json")
-//                        } else {
-//                            print("InValid Json")
-//                        }
-                    
-//                    let decoder = JSONDecoder()
-//                    let data = jsonData // JSON을 Data로 만들기
-//                    if let data = data, let myUser = try? decoder.decode(User.self, from:data) {
-//                        print("myUser.url : ",myUser.url)
-//                        print("myData : ", myUser)
-//                    }
                     
                 case .failure:
                     print("getUser failure")
