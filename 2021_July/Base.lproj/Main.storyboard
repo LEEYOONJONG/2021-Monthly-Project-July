@@ -16,18 +16,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvA-i8-fMN">
-                                <rect key="frame" x="154" y="664" width="112" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Github Login"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvA-i8-fMN">
+                                <rect key="frame" x="107" y="707" width="200" height="60"/>
+                                <color key="backgroundColor" red="0.18121265284043128" green="0.35137662020596594" blue="0.18620265470263783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4c8-Y9-6OK"/>
+                                    <constraint firstAttribute="width" constant="200" id="CHQ-wp-V2b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="GitHub Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="loginClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qar-2L-jLE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 커밋 수는?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpX-kh-5U8">
+                                <rect key="frame" x="133" y="229" width="148" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N회입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wP-jh-Dfx">
+                                <rect key="frame" x="123.5" y="279" width="167.5" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GpX-kh-5U8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4yd-f3-tHL"/>
+                            <constraint firstItem="gvA-i8-fMN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="V3k-uG-MVN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gvA-i8-fMN" secondAttribute="bottom" constant="95" id="Yo1-xQ-NoC"/>
+                            <constraint firstItem="3wP-jh-Dfx" firstAttribute="top" secondItem="GpX-kh-5U8" secondAttribute="bottom" constant="24" id="Znu-Tl-q4w"/>
+                            <constraint firstItem="3wP-jh-Dfx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oZo-KF-TVJ"/>
+                            <constraint firstItem="GpX-kh-5U8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="185" id="paX-zm-6MV"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="gvA-i8-fMN" id="b4n-wu-AKw"/>
@@ -35,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96" y="104"/>
+            <point key="canvasLocation" x="95.652173913043484" y="103.79464285714285"/>
         </scene>
     </scenes>
     <resources>
