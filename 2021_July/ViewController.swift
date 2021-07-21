@@ -24,8 +24,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         loginButton.layer.cornerRadius = 10
         
         //
-        LoginManager.shared.callback = {[weak self] str in
-            guard let self = self else { return }
+        LoginManager.shared.callback = {[weak self] str in // [weak self]와
+            guard let self = self else { return } // 이 라인 안써도 잘 작동되긴 함.
             DispatchQueue.main.async {
                 self.countLabel.text = str
             }
