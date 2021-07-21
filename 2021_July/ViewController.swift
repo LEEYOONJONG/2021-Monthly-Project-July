@@ -24,7 +24,12 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         loginButton.layer.cornerRadius = 10
         
         //
-        
+        LoginManager.shared.callback = {[weak self] str in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.countLabel.text = str
+            }
+        }
         
         //
         userNotificationCenter.delegate = self
@@ -85,6 +90,10 @@ class LoginManager {
     let client_secret = "a0c30c5dfaa7224a0928c3635250d3ad26bf709f"
     var commitNum:String = "데이터를 가져오는 중입니다..."
     
+    //
+    var callback: ((String) -> ())?
+    
+    //
     func fetch() {
         AF.request(githubURL).responseString { response in
             guard let responseValue = response.value else{
@@ -108,7 +117,10 @@ class LoginManager {
                             if (try i.attr("data-date") == stringDate){
                                 print("오늘의 commit 수는 ", try i.attr("data-count"))
                                 self.commitNum = "\(Int(try i.attr("data-count")) ?? -1)"
-
+                                DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now()+1, execute: {
+                                    let n = Int.random(in: 1...9999)
+                                    self.callback?("\(self.commitNum)회입니다.")
+                                })
                                 // 여기서 새로운 뷰 컨트롤러로 데이터를 segue 등으로 넘겨야 할듯
                             }
                         }
@@ -131,6 +143,10 @@ class LoginManager {
         }
     }
     func requestAccessToken(with code: String){ // redirection 이후
+        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now()+1, execute: {
+            let n = Int.random(in: 1...9999)
+            self.callback?("계산 중입니다...")
+        })
         let client_id = "ac6468124c1c1e12dd21"
         let client_secret = "a0c30c5dfaa7224a0928c3635250d3ad26bf709f"
         let url = "https://github.com/login/oauth/access_token"
